@@ -5,10 +5,21 @@ from django.utils import timezone
 
 
 class UserManager(BaseUserManager):
-
+    """Managing user model class
+    """
     def create_user(self, username, password=None):
-        """
-        Creates and saves a user with the given username and password.
+        """Create and saves a user with the given username (email) and password.
+
+        If username is invalidated email, raise ValidationException
+
+        :param username: user email
+        :param password: password
+
+        :raises ValidationException: If username(email) is invalid,
+            raise ValidationException.
+
+        :returns UserModel:
+
         """
         # If email is invalidate, it throws ValidationError
         EmailValidator()(username)

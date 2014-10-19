@@ -2,5 +2,9 @@
 
 *.pyc
 
+# python source ignore files
 pineserver/settings.py
 db.sqlite3
+
+# documentation ignore files
+docs/build/
