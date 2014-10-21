@@ -5,9 +5,10 @@ from django.utils import timezone
 
 
 class UserManager(BaseUserManager):
-    """Managing user model class
-    You can create user using UserModel.objects.create(**kwargs). But it maybe occur invalid email error.
-    You must use UserModel.objects.create_user(...) instead of create(...).
+    """
+    Managing user model class.
+    You can create user using UserModel.objects.create(\*\*kwargs). But it maybe occur invalid email error.
+    You must use **UserModel.objects.create_user(...)** instead of create(...).
     """
     def create_user(self, username, password=None):
         """
